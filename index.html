@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Capital Compass</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="calculator">
+            <h1>Calculadora de Renda Variável</h1>
+
+            <div class="form-group">
+                <label for="ticker">Ticker</label>
+                <input type="text" id="ticker">
+            </div>
+
+            <div class="form-group">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade">
+            </div>
+
+            <div class="form-group">
+                <label for="preco-pago">Preço Pago(R$)</label>
+                <input type="number" id="preco-pago">
+            </div>
+            
+            <div class="form-group">
+                <label for="preco-atual">Preço Atual(R$)</label>
+                <input type="number" id="preco-atual">
+            </div>
+
+            <button id="calcular">Calcular</button>
+
+            <div id="resultado" class="resultado hidden"></div>
+        
+        </div>
+
+        <script src="script.js"></script>
+    </body>
