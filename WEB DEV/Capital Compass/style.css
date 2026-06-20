@@ -1,0 +1,182 @@
+:root {
+    --bg: #0a0f0d;
+    --surface: #0c110e;
+    --text: #e0ede4;
+    --muted: #00ff40;
+    --green: #00ff40;
+    --red: #ff0000;
+}
+
+select {
+  background: #0a0f0d;
+  border: 1px solid #1a2e1f;
+  border-radius: 4px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+select:focus {
+  border-color: var(--green);
+}
+
+/* Cor dinâmica no resultado via JS */
+.resultado.positivo { color: var(--green); }
+.resultado.negativo { color: var(--red); }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#resetar {
+  margin-bottom: 24px;
+  padding: 12px 20px;
+
+  background: transparent;
+  border: 1px solid var(--red);
+  border-radius: 4px;
+
+  color: var(--red);
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#resetar:hover {
+  background: var(--red);
+  color: #000;
+}
+
+#resetar:active {
+  transform: scale(0.98);
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  padding: 48px 24px;
+  min-height: 100vh;
+}
+
+.calculator {
+    background: var(--surface);
+    border: 1px solid #1a2e1f;
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+}
+
+h1 {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    color: var(--green);
+    
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input {
+  background: #0a0f0d;
+  border: 1px solid #1a2e1f;
+  border-radius: 4px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--green);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  color: var(--green);
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: var(--green);
+  color: #000;
+}
+
+.resultado {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #1a2e1f;
+  border-radius: 6px;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+.resultado.positivo { color: var(--green); border-color: var(--green); }
+.resultado.negativo { color: var(--red);   border-color: var(--red); }
+
+/* Tabela da carteira */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#tabela-carteira tbody tr:hover {
+  background: srgba(0, 255, 64, 0.05);
+}
+
+#tabela-carteira th {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid #1a2e1f;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+#tabela-carteira td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #1a2e1f;
+}
+
+#tabela-carteira .positivo { color: var(--green); }
+#tabela-carteira .negativo { color: var(--red); }
