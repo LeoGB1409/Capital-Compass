@@ -1,0 +1,113 @@
+:root {
+    --bg: #0a0f0d;
+    --surface: #111a14;
+    --text: #e0ede4;
+    --muted: #5a7a62;
+    --green: #4ade80;
+    --red: #f87171;
+}
+
+/* Cor dinâmica no resultado via JS */
+.resultado.positivo { color: var(--green); }
+.resultado.negativo { color: var(--red); }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    padding: 48px 24px;
+    min-height: 100vh;
+}
+
+.calculator {
+    background: var(--surface);
+    border: 1px solid #1a2e1f;
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+}
+
+h1 {
+    font-size: 20px;
+    color: var(--green);
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input {
+  background: #0a0f0d;
+  border: 1px solid #1a2e1f;
+  border-radius: 4px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--green);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  color: var(--green);
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: var(--green);
+  color: #000;
+}
+
+.resultado {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #1a2e1f;
+  border-radius: 6px;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+.resultado.positivo { color: var(--green); border-color: var(--green); }
+.resultado.negativo { color: var(--red);   border-color: var(--red); }
