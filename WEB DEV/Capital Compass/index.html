@@ -10,12 +10,15 @@
     
     <body>
 
-        <button id="resetar">
-            Limpar Carteira
-        </button>
-
-
         <div class="calculator">
+
+            <div class="top-actions">
+                <button id="resetar" 
+                class="btn-resetar">
+                    Limpar Carteira
+                </button>
+            </div>
+
             <h1>CAPITAL COMPASS - Calculadora de Renda Variável</h1>
         
             <div class="form-group">
@@ -43,15 +46,40 @@
                 <input type="number" id="dividendo">
             </div>
 
-            
             <button id="calcular">Calcular</button>
 
             <div id="resultado" class="resultado hidden"></div>
-        
         </div>
 
-        <script src="script.js"></script>
+        <!--Dashboard-->
+            <div id="dashboard" class="dashboard hiddden">
+                <div class="dash-card">
+                        <div class="dash-label">Patrimonio Total</div>
+                        <div class="dash-value" id="dash-patrimonio">R$ 0,00</div>
+                </div>
+                    <div class="dash-card">
+                        <div class="dash-label">Total Investido</div>
+                        <div class="dash-value" id="dash-investido">R$ 0,00</div>
+                </div>
+                    <div class="dash-card">
+                        <div class="dash-label">Resultado Total</div>
+                        <div class="dash-value" id="dash-resultado">R$ 0,00</div>
+                </div>
+                    <div class="dash-card">
+                        <div class="dash-label">Renda Mensal</div>
+                        <div class="dash-value" id="dash-mensal">R$ 0,00</div>
+                </div>
+                    <div class="dash-card">
+                        <div class="dash-label">Renda Anual</div>
+                        <div class="dash-value" id="dash-anual">R$ 0,00</div>
+                </div>
+                    <div class="dash-card">
+                        <div class="dash-label">DY Medio</div>
+                        <div class="dash-value" id="dash-dy">R$ 0,00</div>
+                </div>
+            </div>
 
+        
 <table id="tabela-carteira">
     <thead>
         <tr>
@@ -68,6 +96,10 @@
     </thead>
     <tbody id="tbody-carteira"></tbody>
 </table>
+
+<script src="script.js"></script>
+
     </body>
+</html>
 
     
