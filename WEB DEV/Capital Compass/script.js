@@ -150,6 +150,9 @@ function renderCarteira() {
         <td class="${cor}">${variacao.toFixed(2)}%</td>
         <td>R$ ${rendaMensal.toFixed(2)}</td>
         <td>${dividendYield.toFixed(2)}%</td>
+        <td>
+          <button class="btn-remover" onclick="removerAtivo('${ticker}')">x</button>
+        </td>
       </tr>
     `;
   });
@@ -229,6 +232,16 @@ function renderDashboard() {
 // ============================================================
 function salvarCarteira() {
   localStorage.setItem('carteira', JSON.stringify(carteira));
+}
+
+// ============================================================
+// EXCLUSÃO DE UM ATIVO
+// ============================================================
+function removerAtivo(ticker) {
+  if (!confirm(`Deseja remover ${ticker} da carteira?`)) return;
+  delete carteira[ticker];
+  salvarCarteira();
+  renderCarteira();
 }
 
 // ============================================================

@@ -214,3 +214,22 @@ button:hover {
 @media (max-width: 400px) {
   .dashboard { grid-template-columns: 1fr;}
 }
+
+.btn-remover {
+  width: auto;
+  padding: 4px 10px;
+  margin: 0;
+  border: 1px solid var(--red);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--red);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0;
+}
+
+.btn-remover:hover {
+  background: var(--red);
+  color: #000;
+}
