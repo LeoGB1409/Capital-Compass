@@ -245,6 +245,44 @@ function removerAtivo(ticker) {
 }
 
 // ============================================================
+// BUSCAR COTAÇÃO VIA BRAPI  ← cola aqui
+// ============================================================
+async function buscarCotacao(ticker) {
+  try {
+    const url = `https://brapi.dev/api/quote/${ticker}?token=${BRAPI_TOKEN}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.results[0].regularMarketPrice;
+  } catch (erro) {
+      console.error('Erro ao buscar cotação:', erro);
+      return null;
+    }
+  }
+
+  async function atualizarCotacao () {
+    const tickers = Object.keys(carteira);
+    if (tickers.length === 0) return;
+
+    const btnAtualizar = document.getElementById('atualizar');
+    btnAtualizar.textContent = 'Atualizando...';
+    btnAtualizar.disabled = true;
+
+    for (const ticker of tickers) {
+      const precoAtual = await buscarCotacao(ticker);
+      if (precoAtual !== null) {
+        carteira[ticker].precoAtual = precoAtual;
+      }
+    }
+
+    salvarCarteira();
+    renderCarteira();
+
+    btnAtualizar.textContent = 'Atualizar Cotações';
+    btnAtualizar.disabled = false;
+  }
+
+
+// ============================================================
 // INICIALIZAÇÃO — carrega carteira ao abrir a página
 // ============================================================
 renderCarteira();

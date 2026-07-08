@@ -233,3 +233,19 @@ button:hover {
   background: var(--red);
   color: #000;
 }
+
+#atualizar {
+  border-color: #60a5fa;
+  color: #60a5fa;
+  margin-top: 8px;
+}
+
+#atualizar:hover {
+  background: #60a5fa;
+  color: #000;
+}
+
+#atualizar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
