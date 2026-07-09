@@ -245,7 +245,7 @@ function removerAtivo(ticker) {
 }
 
 // ============================================================
-// BUSCAR COTAÇÃO VIA BRAPI  ← cola aqui
+// BUSCAR COTAÇÃO VIA BRAPI 
 // ============================================================
 async function buscarCotacao(ticker) {
   try {
